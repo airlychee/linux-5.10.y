@@ -124,7 +124,10 @@
 
 &ext_mdio {
 	external_phy: ethernet-phy@0 {
-		/* Realtek RTL8211F (0x001cc916) */
+		/* 
+		 * Realtek RTL8211F (0x001cc916) 
+		 * JLSemi JL2101 (0x937c4032)
+		 */
 		reg = <0>;
 		max-speed = <1000>;
 
@@ -172,7 +175,7 @@
 	pinctrl-names = "default";
 	uart-has-rtscts;
 
-	bluetooth {
+	bluetooth: bluetooth {
 		compatible = "realtek,rtl8822cs-bt";
 		interrupt-parent = <&gpio_intc>;
 		interrupts = <95 IRQ_TYPE_LEVEL_HIGH>;
@@ -183,6 +186,7 @@
 		clock-names = "lpo";
 		vbat-supply = <&vddao_3v3>;
 		vddio-supply = <&vddio_ao1v8>;
+		status = "disabled";
 	};
 };
 
